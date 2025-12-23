@@ -123,5 +123,4 @@ python app.py
 ## 📜 License
 
 This project is released under the **MIT License**.
-Just say what’s next.
 ```
