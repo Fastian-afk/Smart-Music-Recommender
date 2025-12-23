@@ -1,81 +1,127 @@
 # 🎧 Smart Music Recommender
+**ML-Powered Music Recommendation with Interactive Web UI**
 
-An intelligent music recommendation system that suggests similar tracks based on learned audio patterns, artist data, and user-selected input. Built with Python, scikit-learn, and Gradio — and runs entirely in Google Colab!
+<p align="center">
+  <img src="https://img.shields.io/badge/Machine%20Learning-Recommender-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Model-Random%20Forest-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/UI-Gradio-orange?style=for-the-badge"/>
+</p>
 
-## 🚀 Features
+---
 
-- 🎵 **Song-Based Recommendations**: Select any song (e.g., *Believer*, *Shape of You*) to get personalized suggestions.
-- 🔊 **Audio-Aware Modeling**: Uses features like *danceability*, *energy*, *valence*, and *tempo*.
-- 🧠 **ML-Powered**: Trained a `RandomForestClassifier` to learn musical patterns.
-- 🗣️ **English-Only Filter**: Ensures recommendations remain linguistically relevant.
-- 👨‍🎤 **Artist Name Display**: Shows artist alongside track name.
-- ▶️ **Live Audio Previews**: Play 30-second previews of recommended tracks (where available).
-- 🖱️ **Interactive UI**: Powered by Gradio with dropdowns and real-time inference.
+## 📌 Overview
+**Smart Music Recommender** is an interactive machine learning system that suggests **similar songs** based on learned audio patterns and metadata.
 
+The system analyzes features such as **danceability, energy, valence, tempo**, and artist information to generate recommendations. It runs entirely in **Google Colab** and exposes a clean, user-friendly interface using **Gradio**.
 
-## 🛠️ Tech Stack
+---
 
-| Tool            | Use Case                        |
-|----------------|----------------------------------|
-| `Python`        | Core programming language        |
-| `Pandas`        | Data preprocessing and cleaning  |
-| `scikit-learn`  | ML model training & inference    |
-| `Gradio`        | Web UI for the recommender       |
-| `Hugging Face`  | Spotify dataset integration      |
-| `Google Colab`  | Runtime & deployment             |
+## 🚀 Key Features
+- 🎵 **Song-Based Recommendations** using real audio features  
+- 🔊 **Audio-Aware Modeling** (danceability, energy, tempo, valence, etc.)  
+- 🧠 **ML-Driven Similarity** via Random Forest learning  
+- 🌍 **English-Only Filtering** for linguistic consistency  
+- 👨‍🎤 **Artist Attribution** for each recommendation  
+- ▶️ **30-second Audio Previews** (where available)  
+- 🖱️ **Interactive Web UI** powered by Gradio  
 
+---
 
-## 📁 Project Structure
+## 🛠 Tech Stack
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="38"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="38"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" width="38"/>
+</p>
 
-├── app.py                 # Gradio Web App (main UI + ML logic)
+**Deployment & Tools**
+- Gradio — interactive web interface  
+- Hugging Face Datasets — Spotify dataset  
+- Google Colab — execution & hosting  
+
+---
+
+## 📂 Project Structure
+
+smart-music-recommender/
+│
+├── app.py                 # Gradio web app (UI + inference)
 ├── model_utils.py         # Model training & feature handling
-├── preprocess.py          # Dataset filtering and transformation
-├── sample_inputs.py       # List of display names for dropdown
-└── requirements.txt       # Package requirements
+├── preprocess.py          # Dataset filtering and preprocessing
+├── sample_inputs.py       # Dropdown display inputs
+├── requirements.txt
+└── README.md
 
-## 📦 Installation
+---
 
-You can run this project locally or in **Google Colab**.
+## 🧠 Machine Learning Approach
 
-### Option 1: Colab (Recommended)
-1. Open `app.ipynb` notebook in Google Colab.
-2. Run all cells to launch the live app.
-3. Interact via the Gradio link at the bottom.
+* **Model**: RandomForestClassifier
+* **Input**: Audio feature vector of a selected track
+* **Learning Objective**: Capture musical similarity via genre patterns
+* **Output**: Top-N recommended tracks aligned with learned representations
 
-### Option 2: Local
+This approach balances **performance, interpretability, and scalability** for recommendation tasks.
 
-git clone https://github.com/your-username/smart-music-recommender.git
+---
+
+## 📊 Dataset
+
+The project uses the **Spotify Tracks Dataset** hosted on Hugging Face:
+
+* 114,000+ tracks
+* Rich audio features (danceability, energy, tempo, valence, etc.)
+* Metadata: artist, album, language, genre
+
+---
+
+## 🚀 Running the Project
+
+### Option 1️⃣ Google Colab (Recommended)
+
+1. Open the provided notebook in **Google Colab**
+2. Run all cells
+3. Launch the live Gradio interface via the generated link
+
+---
+
+### Option 2️⃣ Local Setup
+
+git clone https://github.com/Fastian-afk/smart-music-recommender.git
 cd smart-music-recommender
 pip install -r requirements.txt
 python app.py
 
-## 📊 Dataset
+---
 
-We used the [`maharshipandya/spotify-tracks-dataset`](https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset) hosted on Hugging Face. The dataset includes:
+## 🎯 Why This Project Matters
 
-- 114k+ tracks
-- Audio features (danceability, energy, etc.)
-- Metadata: artist, album, language, genre, etc.
+* Demonstrates **applied ML for recommender systems**
+* Combines **data engineering + modeling + UI deployment**
+* Shows end-to-end product thinking, not just model training
+* Easily extensible to embeddings, deep learning, or collaborative filtering
 
-## 🧠 ML Approach
+---
 
-- **Model**: RandomForestClassifier (genre prediction)
-- **Input**: Audio feature vector of selected track
-- **Output**: Top N similar tracks based on learned genre patterns
+## 👨‍💻 Author
 
-## 🤝 Acknowledgements
+**Imaad Fazal**
 
-- Hugging Face for the Spotify dataset
-- Gradio for the effortless deployment tools
-- scikit-learn for the ML utilities
+📧 Email: [imdufazal@gmail.com](mailto:imdufazal@gmail.com)
+🌐 Portfolio: [https://imaad-fazal-portfolio-hub.vercel.app/](https://imaad-fazal-portfolio-hub.vercel.app/)
 
-## 📬 Contact
+---
 
-For questions, feedback, or collaborations:
-**Imaad Fazal**  
+## 🙌 Acknowledgements
 
-## 📝 License
+* Hugging Face — Spotify dataset
+* Gradio — rapid ML app deployment
+* scikit-learn — machine learning utilities
 
-This project is licensed under the [MIT License](LICENSE).
+---
 
-**#MachineLearning #MusicRecommender #Spotify #Gradio #Python #Colab #OpenSource**
+## 📜 License
+
+This project is released under the **MIT License**.
+Just say what’s next.
+```
